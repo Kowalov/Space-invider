@@ -16,9 +16,9 @@ Arcade game in which player commands a space ship and fights with aliens. Player
 to progress through.
 
 ## Screenshots
-![Main menu](./img/screen1.JPG)
-![App Layout](./img/screen2.JPG)
-![App Layout](./img/screen3.JPG)
+![Main menu](./img/screen1.PNG)
+![App Layout](./img/screen2.PNG)
+![App Layout](./img/screen3.PNG)
 
 ## Technologies
 * Python - version 3.7

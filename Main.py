@@ -11,7 +11,7 @@ pygame.display.set_caption("Space Shooter")
 
 #Load images
 RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "Imperial_ship1.png"))
-GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "ship2.png"))
+GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "Imperial_ship2.png"))
 BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets", "Imperial_ship3.png"))
 
 #Player ship

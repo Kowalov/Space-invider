@@ -5,26 +5,26 @@ import random
 
 pygame.font.init()
 
-WIDTH, HEIGHT = 800, 800
+WIDTH, HEIGHT = 1300, 900
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Shooter")
 
 #Load images
-RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_red_small.png"))
-GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_green_small.png"))
-BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_blue_small.png"))
+RED_SPACE_SHIP = pygame.image.load(os.path.join("assets", "Imperial_ship1.png"))
+GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets", "ship2.png"))
+BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets", "Imperial_ship3.png"))
 
 #Player ship
-YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "pixel_ship_yellow.png"))
+YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets", "Falcon.png"))
 
 #Lasers
-RED_LASER = pygame.image.load(os.path.join("assets", "pixel_laser_red.png"))
-GREEN_LASER  = pygame.image.load(os.path.join("assets", "pixel_laser_green.png"))
-BLUE_LASER  = pygame.image.load(os.path.join("assets", "pixel_laser_blue.png"))
-YELLOW_LASER  = pygame.image.load(os.path.join("assets", "pixel_laser_yellow.png"))
+RED_LASER = pygame.image.load(os.path.join("assets", "laser_red.png"))
+GREEN_LASER  = pygame.image.load(os.path.join("assets", "laser_green.png"))
+BLUE_LASER  = pygame.image.load(os.path.join("assets", "laser_green.png"))
+YELLOW_LASER  = pygame.image.load(os.path.join("assets", "laser_blue.png"))
 
 #Background
-BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background-black.png")), (WIDTH, HEIGHT))
+BG = pygame.transform.scale(pygame.image.load(os.path.join("assets", "background.jpg")), (WIDTH, HEIGHT))
 
 
 class Laser:
@@ -82,7 +82,7 @@ class Ship:
 
     def shoot(self):
         if self.cool_down_counter == 0:
-            laser = Laser(self.x, self.y, self.laser_img)
+            laser = Laser(self.x + 40, self.y, self.laser_img)
             self.lasers.append(laser)
             self.cool_down_counter = 1
 
@@ -138,7 +138,7 @@ class Enemy(Ship):
 
     def shoot(self):
         if self.cool_down_counter == 0:
-            laser = Laser(self.x - 15, self.y, self.laser_img)
+            laser = Laser(self.x + 17, self.y + 10, self.laser_img)
             self.lasers.append(laser)
             self.cool_down_counter = 1
 

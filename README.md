@@ -18,6 +18,7 @@ to progress through.
 ## Screenshots
 ![Main menu](./img/screen1.JPG)
 ![App Layout](./img/screen2.JPG)
+![App Layout](./img/screen3.JPG)
 
 ## Technologies
 * Python - version 3.7

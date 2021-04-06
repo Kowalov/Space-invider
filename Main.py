@@ -92,6 +92,12 @@ class Ship:
     def get_height(self):
         return self.ship_img.get_height()
 
+    def off_screen(self, height):
+        return not (self.y <= height and self.y >= 0)
+
+    def off_screen2(self, width):
+        return not (self.x <= width and self.x >= 0)
+
 
 class Player(Ship):
     def __init__(self, x, y, health = 100):
@@ -142,8 +148,10 @@ class Enemy(Ship):
             self.lasers.append(laser)
             self.cool_down_counter = 1
 
-    def move(self, vel):
-        self.y += vel
+    def move(self, velx, vely):
+        self.y += velx
+        self.x += vely
+
 
 
 
@@ -162,7 +170,8 @@ def main():
 
     enemies = []
     wave_length = 5
-    enemy_vel = 1
+    enemy_velx = 1
+    enemy_vely = 1
     laser_vel = 5
 
     player_vel = 6
@@ -243,10 +252,14 @@ def main():
             player.shoot()
 
         for enemy in enemies[:]:
-            enemy.move(enemy_vel)
+            enemy.move(enemy_velx, enemy_vely)
             enemy.move_lasers(laser_vel, player)
 
-            if random.randrange(0, 2*60) ==1:
+            if enemy.off_screen2(WIDTH):
+                enemy_vely *= -1
+
+
+            if random.randrange(0, 2*60)==1:
                 enemy.shoot()
 
             if collide(enemy, player):

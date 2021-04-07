@@ -31,6 +31,7 @@ List of features ready and TODOs for future development:
 * Levels and progressive difficulty
 * Health bar and "lives" system
 * Collisions system
+* Ememies movement in both axes
 
 To-do list:
 * Improve the graphics

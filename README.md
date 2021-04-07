@@ -12,8 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-Arcade game in which player commands a space ship and fights with aliens. Player has 5 lives and a health bar, game has increasing difficulty level with many levels
-to progress through.
+Arcade game in which player commands a space ship and fights with Imperial fleet. Player has 5 lives and a health bar, game has increasing difficulty level with many levels to progress through. It has been created using pygame.
 
 ## Screenshots
 ![Main menu](./img/screen1.PNG)
@@ -36,6 +35,7 @@ List of features ready and TODOs for future development:
 To-do list:
 * Improve the graphics
 * Adjust rate of fire for enemies
+* Improve enemies movement 
 
 ## Status
 Project finished

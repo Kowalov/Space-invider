@@ -1,5 +1,5 @@
 # Space Invider
-> Classic game created using python and pygame
+> Classic shooter game created using python and pygame
 
 ## Table of contents
 * [General info](#general-info)
@@ -12,7 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-Arcade game in which player commands a space ship and fights with Imperial fleet. Player has 5 lives and a health bar, game has increasing difficulty level with many levels to progress through. It has been created using pygame.
+Arcade game based on Star Wars universe in which player commands a space ship and fights with Imperial fleet. Player has 5 lives and a health bar, game has increasing difficulty level with many levels to progress through. It has been created using pygame.
 
 ## Screenshots
 ![Main menu](./img/screen1.PNG)
@@ -36,7 +36,8 @@ List of features ready and TODOs for future development:
 To-do list:
 * Improve the graphics
 * Adjust rate of fire for enemies
-* Improve enemies movement 
+* Improve enemies movement
+* Add "special" levels 
 
 ## Status
 Project finished

@@ -48,7 +48,7 @@ class Laser:
 
 
 class Ship:
-    COOLDOWN = 30
+    COOLDOWN = 20
 
     def __init__(self, x, y, health = 100):
         self.x = x
@@ -152,13 +152,12 @@ class Enemy(Ship):
         self.y += velx
         self.x += vely
 
-
-
-
+#objects collisions
 def collide(obj1, obj2):
     offset_x = obj2.x - obj1.x
     offset_y = obj2.y - obj1.y
     return obj1.mask.overlap(obj2.mask, (offset_x, offset_y)) != None
+
 
 def main():
     run = True
@@ -174,7 +173,7 @@ def main():
     enemy_vely = 1
     laser_vel = 5
 
-    player_vel = 6
+    player_vel = 7
 
     player = Player(390, 640)
 
@@ -195,7 +194,6 @@ def main():
         # Drawin enemy
         for enemy in enemies:
             enemy.draw(WIN)
-
 
         #Drawin ship
         player.draw(WIN)
@@ -224,9 +222,7 @@ def main():
             else:
                 continue
 
-
-
-        if len(enemies) == 0:
+        if len(enemies) == 0:       #level change after destroying all enemies
             level += 1
             wave_length += 5
             for i in range(wave_length):
@@ -251,13 +247,13 @@ def main():
         if keys[pygame.K_SPACE]:
             player.shoot()
 
+        #enemies movement, shooting, and colisions
         for enemy in enemies[:]:
             enemy.move(enemy_velx, enemy_vely)
             enemy.move_lasers(laser_vel, player)
 
             if enemy.off_screen2(WIDTH):
                 enemy_vely *= -1
-
 
             if random.randrange(0, 2*60)==1:
                 enemy.shoot()
